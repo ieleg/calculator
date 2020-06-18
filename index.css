@@ -1,0 +1,52 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: rgba(242, 241, 239, .8);
+}
+.calculatoer{
+	--button-width:80px;
+	--button-height:80px;
+	display: grid;
+	grid-template-areas: "result result result result"
+											"ac plus-minus percent divide"
+											"number-7 number-8 number-9 multiplay"
+											"number-4 number-5 number-6 substract"
+											"number-1 number-2 number-3 add"
+											"number-0 number-0 dot equal";
+	grid-template-columns: repeat(4,var(--button-width));
+	grid-template-rows: repeat(6,var(--button-height));
+	box-shadow: -8px -8px 16px -10px rgba(218, 223, 225, 1),
+	8px 8px 16px -10px rgba(46, 49, 49, 1);
+	padding: 24px;
+	border-radius: 20px;
+}
+.calculatoer button{
+	margin: 5px;
+	border: 0;
+	padding: 0;
+	border-radius: calc(var(--button-height)/2);
+	font-size: 24px;
+	font-weight: normal;
+	color: #999;
+	outline: none;
+	/* 浅灰到深灰 */
+	background:linear-gradient(135deg,rgba(230, 230, 230, 1) 0%,rgba(246, 246, 246, 1) 100%);
+	box-shadow: -4px -4px 8px -5px rgba(246, 246, 246, 1),
+	4px 4px 8px -5px rgba(0, 0, 0, .5);
+}
+.calculatoer button:active{
+	/* 阴影改为内部 */
+	box-shadow: -4px -4px 8px -5px rgba(246, 246, 246, 1),
+	4px 4px 8px -5px rgba(0, 0, 0, .5) inset;
+}
+.result{
+	text-align: right;
+	line-height: var(--button-height);
+	font-size: 48px;
+	font-family: helvetica;
+	padding: 0 20px;
+	color: #666;
+}
+	
